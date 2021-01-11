@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Zone Bleue</title>
+</head>
+<body>
+
+<!-- LOGO ZB -->
+<img id="logo-zb-petit" src="img/logo-zb.png" alt="Logo">
+
+<!-- PLAYER VIMEO -->
+<div id="container">
+    <iframe src="https://vimeo.com/488719745/89762be5af" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    
+    <!-- BOUTONS CALL TO ACTION -->
+    <!-- x3 - IMAGES CLIQUABLES -->
+    
+    <div id="bouton_acc_qrv" class="boutons_groupes">
+        <!-- STORE DU COMMERÇANT - SI EXISTANT-->
+        <div class="bouton">
+            <a href="#">
+                <img src="img/logo_eShop.png" alt="Site Ecommerce">
+            </a>
+            <p>Boutique</p>
+        </div>
+        
+        <!-- MESSAGE CLICK & COLLECT - MODAL -->
+        <div class="bouton">
+            <a href="#">
+                <img src="img/logo_click-collect.png" alt="Click & Collect">
+            </a>
+            <p>Click & Collect</p>
+        </div>
+        
+        <!-- PAGE PRESENTATION COMMERÇANT SUR ZB -->
+        <div class="bouton">
+            <a href="#">
+                <img src="img/logo-user.png" alt="Infos">
+            </a>
+            <p>Infos</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+	
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+
+    player.on('play', function() {
+        alert('You have played the video')
+    });
+		player.on('ended', function(){
+    	alert('Video play completed');
+    });
+    
+    player.getVideoTitle().then(function(title) {
+        console.log('title:', title);
+    });
+</script>
+    
+</body>
+</html>
